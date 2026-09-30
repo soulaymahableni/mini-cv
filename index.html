@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mini CV one page de Soulayma Hableni">
+  <title>CV - Soulayma Hableni</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="theme" type="button" aria-label="Changer le thème">🌙</button>
+
+  <main class="cv">
+    <aside class="side">
+      <h1>Soulayma<br>Hableni</h1>
+      <p class="role">Étudiante en informatique, orientée DevOps</p>
+
+      <h2>Contact</h2>
+      <ul class="plain">
+        <li><a href="mailto:slayma680@gmail.com">slayma680@gmail.com</a></li>
+        <li>+216 00 000 000</li>
+        <li>Tunisie</li>
+        <li><a href="https://github.com/TON_USER">github.com/TON_USER</a></li>
+      </ul>
+
+      <h2>Compétences</h2>
+      <ul class="skills">
+        <li>Ubuntu Server</li>
+        <li>SSH</li>
+        <li>Docker</li>
+        <li>Jenkins</li>
+        <li>Git / GitHub</li>
+        <li>HTML5 / CSS3</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <h2>Langues</h2>
+      <ul class="plain">
+        <li>Arabe : langue maternelle</li>
+        <li>Français : courant</li>
+        <li>Anglais : intermédiaire</li>
+      </ul>
+    </aside>
+
+    <div class="main">
+      <section>
+        <h2>Profil</h2>
+        <p>Étudiante en informatique, je m'intéresse à l'administration système et à l'automatisation. J'ai mis en place un serveur Linux accessible en SSH, avec Docker et Jenkins, et je versionne mon travail avec Git et GitHub.</p>
+      </section>
+
+      <section>
+        <h2>Projets</h2>
+        <article>
+          <h3>Serveur CI/CD sur machine virtuelle</h3>
+          <p>Installation d'Ubuntu Server 26.04 et accès distant sécurisé par SSH. Installation de Docker, puis de Jenkins en tant que service, vérifié depuis la machine physique.</p>
+        </article>
+        <article>
+          <h3>Mini CV one page</h3>
+          <p>Page réalisée en HTML5, CSS3 et JavaScript (thème clair/sombre, impression en PDF), versionnée avec Git et publiée sur GitHub via SSH.</p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Formation</h2>
+        <article>
+          <h3>Licence en informatique</h3>
+          <p class="meta">Nom de l'établissement, 2023 - 2026</p>
+        </article>
+      </section>
+
+      <button id="print" type="button">Imprimer / enregistrer en PDF</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

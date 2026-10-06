@@ -3,75 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mini CV one page de Soulayma Hableni">
-  <title>CV - Soulayma Hableni</title>
+  <title>DevSecOps Portfolio – Soulayma Hableni</title>
+  <meta name="description" content="Portfolio DevSecOps : Git, Docker, Jenkins, Kubernetes, Ansible, Terraform, Argo CD.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="theme" type="button" aria-label="Changer le thème">🌙</button>
+  <header class="topbar">
+    <a class="brand" href="#top">SH</a>
+    <nav aria-label="Navigation principale">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <main class="cv">
-    <aside class="side">
-      <h1>Soulayma<br>Hableni</h1>
-      <p class="role">Étudiante en informatique, orientée DevOps</p>
+  <main id="top">
+    <section class="hero">
+      <p class="hero-role">Étudiant(e) en DevSecOps</p>
+      <h1>Soulayma Hableni</h1>
+      <p class="hero-lead">Je construis des chaînes de livraison où chaque commit est testé, analysé et déployé automatiquement.</p>
 
-      <h2>Contact</h2>
-      <ul class="plain">
-        <li><a href="mailto:slayma680@gmail.com">slayma680@gmail.com</a></li>
-        <li>+216 00 000 000</li>
-        <li>Tunisie</li>
-        <li><a href="https://github.com/TON_USER">github.com/TON_USER</a></li>
-      </ul>
+      <ol class="pipeline" id="pipeline" aria-label="Exemple de pipeline CI/CD">
+        <li data-stage="Commit"><span class="dot"></span>Commit</li>
+        <li data-stage="Build"><span class="dot"></span>Build</li>
+        <li data-stage="Scan"><span class="dot"></span>Scan</li>
+        <li data-stage="Deploy"><span class="dot"></span>Deploy</li>
+      </ol>
+    </section>
 
-      <h2>Compétences</h2>
+    <section id="about" class="block">
+      <h2>About</h2>
+      <p>Je suis étudiant(e) en [filière / établissement]. Je m'intéresse à l'automatisation, à la conteneurisation et à la sécurité des applications. Ce portfolio est lui-même un projet DevSecOps : versionné avec Git, empaqueté avec Docker, servi par Nginx.</p>
+    </section>
+
+    <section id="skills" class="block">
+      <h2>DevSecOps Skills</h2>
+      <p class="intro">Les outils utilisés pendant ce projet.</p>
       <ul class="skills">
-        <li>Ubuntu Server</li>
-        <li>SSH</li>
-        <li>Docker</li>
-        <li>Jenkins</li>
-        <li>Git / GitHub</li>
-        <li>HTML5 / CSS3</li>
-        <li>JavaScript</li>
+        <li class="skill"><h3>Git</h3><p>Versionnement du code, push vers GitHub via SSH.</p></li>
+        <li class="skill"><h3>Docker</h3><p>Image Nginx du portfolio, conteneur exposé sur un port.</p></li>
+        <li class="skill"><h3>Jenkins</h3><p>Serveur d'intégration continue installé comme service.</p></li>
+        <li class="skill"><h3>Kubernetes</h3><p>Orchestration des conteneurs (étape suivante).</p></li>
+        <li class="skill"><h3>Ansible</h3><p>Configuration automatique des serveurs.</p></li>
+        <li class="skill"><h3>Terraform</h3><p>Infrastructure décrite sous forme de code.</p></li>
+        <li class="skill"><h3>Argo CD</h3><p>Déploiement continu piloté depuis Git (GitOps).</p></li>
       </ul>
+    </section>
 
-      <h2>Langues</h2>
-      <ul class="plain">
-        <li>Arabe : langue maternelle</li>
-        <li>Français : courant</li>
-        <li>Anglais : intermédiaire</li>
-      </ul>
-    </aside>
+    <section id="projects" class="block">
+      <h2>Projects</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filtrer les projets"></div>
+      <div class="projects" id="projects-list"></div>
+    </section>
 
-    <div class="main">
-      <section>
-        <h2>Profil</h2>
-        <p>Étudiante en informatique, je m'intéresse à l'administration système et à l'automatisation. J'ai mis en place un serveur Linux accessible en SSH, avec Docker et Jenkins, et je versionne mon travail avec Git et GitHub.</p>
-      </section>
+    <section id="experience" class="block">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li><time>2026</time><div><h3>Labo DevSecOps</h3><p>Installation d'Ubuntu Server, Docker, Jenkins, Vagrant. Dockerisation d'un portfolio.</p></div></li>
+        <li><time>2025</time><div><h3>Projet / stage à compléter</h3><p>Décrivez ici une mission, un stage ou un projet de classe.</p></div></li>
+        <li><time>2024</time><div><h3>Formation</h3><p>[Diplôme / établissement].</p></div></li>
+      </ol>
+    </section>
 
-      <section>
-        <h2>Projets</h2>
-        <article>
-          <h3>Serveur CI/CD sur machine virtuelle</h3>
-          <p>Installation d'Ubuntu Server 26.04 et accès distant sécurisé par SSH. Installation de Docker, puis de Jenkins en tant que service, vérifié depuis la machine physique.</p>
-        </article>
-        <article>
-          <h3>Mini CV one page</h3>
-          <p>Page réalisée en HTML5, CSS3 et JavaScript (thème clair/sombre, impression en PDF), versionnée avec Git et publiée sur GitHub via SSH.</p>
-        </article>
-      </section>
-
-      <section>
-        <h2>Formation</h2>
-        <article>
-          <h3>Licence en informatique</h3>
-          <p class="meta">Nom de l'établissement, 2023 - 2026</p>
-        </article>
-      </section>
-
-      <button id="print" type="button">Imprimer / enregistrer en PDF</button>
-    </div>
+    <section id="contact" class="block">
+      <h2>Contact</h2>
+      <p>Une question, une opportunité de stage ? Écrivez-moi.</p>
+      <p class="links">
+        <a class="btn" href="mailto:prenom.nom@example.com">Envoyer un e-mail</a>
+        <a class="btn ghost" href="https://github.com/soulaymahableni" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/VOTRE_PROFIL" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </section>
   </main>
 
+  <footer>© <span id="year"></span> Soulayma Hableni – servi par Nginx dans Docker</footer>
   <script src="script.js"></script>
 </body>
 </html>

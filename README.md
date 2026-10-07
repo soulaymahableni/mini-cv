@@ -330,3 +330,44 @@ exit
 | Suppression / recréation | longue | `vagrant destroy` puis `vagrant up` |
 
 Vagrant apporte la logique « infrastructure as code » : l'environnement est décrit dans un fichier, partageable et reproductible. La création manuelle reste utile pour apprendre l'installation complète d'un système.
+
+## 17. Configuration automatique de la VM avec le Vagrantfile
+
+Le Vagrantfile définit automatiquement le nom de la VM, son adresse IP privée, sa mémoire et son nombre de CPU, à partir de variables placées en tête de fichier.
+
+```ruby
+VM_NAME   = "ubuntu-vagrant"
+VM_IP     = "192.168.56.20"
+VM_MEMORY = 1024
+VM_CPUS   = 1
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-24.04"
+  config.vm.hostname = VM_NAME
+  config.vm.network "private_network", ip: VM_IP
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name   = VM_NAME
+    vb.memory = VM_MEMORY
+    vb.cpus   = VM_CPUS
+    vb.customize ["modifyvm", :id, "--paravirtprovider", "kvm"]
+  end
+end
+```
+
+| Paramètre | Valeur |
+|---|---|
+| Nom de la VM | ubuntu-vagrant |
+| Adresse IP privée | 192.168.56.20 |
+| Mémoire | 1024 Mo |
+| CPU | 1 |
+
+![Vagrantfile](images/15-vagrantfile.png)
+
+Résultat de `vagrant status` :
+
+![vagrant status](images/15-vagrant-status.png)
+
+Vérification dans la VM (hostname, IP, mémoire, CPU) :
+
+![Configuration appliquée](images/15-vagrant-config.png)
